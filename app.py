@@ -35,6 +35,8 @@ MENU = (
     "📄 6) Actas de sustentación\n"
     "📑 7) Constancias de estudio o certificados de notas\n"
     "✉️ 8) Redactar correo al programa\n\n"
+    "✉️ 9) Pasisalvos\n\n"
+    
     "Responde con el número de la opción."
 )
 
@@ -43,7 +45,7 @@ RESPUESTAS = {
         "🔄 Aplazamiento (semanas 1–2): correo a ingelectronica@udistrital.edu.co con carta de motivos y paz y salvo de Laboratorios, "
         "Bienestar y Biblioteca.\n"
         "❌ Cancelación (semanas 3–8): correo a secing@udistrital.edu.co con los mismos soportes.\n"
-        "📌 La decisión final la toma el Consejo de Facultad."
+        "📌 La decisión final de la  cancelación la toma el Consejo de Facultad."
     ),
     "2": (
         "🔁 Reintegro: consulta la página de Admisiones y compra el PIN de reintegro cuando esté habilitado. "
@@ -76,6 +78,15 @@ RESPUESTAS = {
         "Solicito información sobre [tu caso]. Quedo atento(a) a requerimientos adicionales.\n\n"
         "Cordialmente,\n[Nombre]\n[Documento]\n[Código]\n[Programa]\n"
         "Enviar a: ingelectronica@udistrital.edu.co"
+    )
+
+     "9": (
+        "Laboratorios:\n\n"
+        "https://forms.office.com/pages/responsepage.aspx?id=74gT1bBqY0OflNVmRKRZcPx2AAVlb_5GhxPDWyLqSspUM1BIR0RDWDlFVUFWT1lUSVg3QTlDUEQxRy4u&origin=QRCode&qrcodeorigin=presentation&route=shorturl \n\n"
+        "Biblioteca:\n\n"
+        ¨https://bibliotecas.udistrital.edu.co/servicios/paz_y_salvos\n\n"
+        "Bienestar:\n\n"
+        "https://bienestar.udistrital.edu.co/node/634"
     )
 }
 
