@@ -4,7 +4,7 @@ from flask import Flask, request
 
 app = Flask(__name__)
 
-# ====== CONFIG ======
+# ====== CONFIGURACION ======
 VERIFY_TOKEN = os.getenv("VERIFY_TOKEN", "mi_token_de_verificacion")
 WHATSAPP_TOKEN = os.getenv("WHATSAPP_TOKEN", "REEMPLAZA_CON_TU_TOKEN")
 API_VERSION = os.getenv("WHATSAPP_API_VERSION", "v20.0")
@@ -27,49 +27,49 @@ def send_whatsapp_text(phone_number_id: str, to: str, text: str):
 
 # ====== MENU ======
 MENU = (
-    "📚 1) Cancelación o aplazamiento de semestre\n"
-    "📥 2) Reintegro a la universidad\n"
-    "📝 3) Inscripción o cancelación de asignaturas\n"
-    "🎓 4) Inscripción de trabajo de grado\n"
-    "🗂️ 5) Permiso para RIUD\n"
-    "📄 6) Actas de sustentación\n"
-    "📑 7) Constancias de estudio o certificados de notas\n"
-    "✉️ 8) Redactar correo al programa\n\n"
-    "✉️ 9) Pasisalvos\n\n"
+    " 1) Cancelación o aplazamiento de semestre\n"
+    " 2) Reintegro a la universidad\n"
+    " 3) Inscripción o cancelación de asignaturas\n"
+    " 4) Inscripción de trabajo de grado\n"
+    " 5) Permiso para RIUD\n"
+    " 6) Actas de sustentación\n"
+    " 7) Constancias de estudio o certificados de notas\n"
+    " 8) Redactar correo al programa\n\n"
+    " 9) Pasisalvos\n\n"
     
     "Responde con el número de la opción."
 )
 
 RESPUESTAS = {
     "1": (
-        "🔄 Aplazamiento (semanas 1–2): correo a ingelectronica@udistrital.edu.co con carta de motivos y paz y salvo de Laboratorios, "
+        "Aplazamiento (semanas 1–2): correo a ingelectronica@udistrital.edu.co con carta de motivos y paz y salvo de Laboratorios, "
         "Bienestar y Biblioteca.\n"
-        "❌ Cancelación (semanas 3–8): correo a secing@udistrital.edu.co con los mismos soportes.\n"
-        "📌 La decisión final de la  cancelación la toma el Consejo de Facultad."
+        " Cancelación (semanas 3–8): correo a secing@udistrital.edu.co con los mismos soportes.\n"
+        " La decisión final de la  cancelación la toma el Consejo de Facultad."
     ),
     "2": (
-        "🔁 Reintegro: consulta la página de Admisiones y compra el PIN de reintegro cuando esté habilitado. "
+        " Reintegro: consulta la página de Admisiones y compra el PIN de reintegro cuando esté habilitado. "
         "Suele publicarse ~2 meses antes de terminar el semestre y el PIN está disponible ~1.5 meses antes del cierre."
     ),
     "3": (
-        "📅 Inscripción/cancelación de asignaturas:\n"
+        " Inscripción/cancelación de asignaturas:\n"
         "• Semana 1: trámite ante el Proyecto Curricular.\n"
         "• Semanas 2–3 aprox.: trámite ante el Consejo de Facultad.\n"
         "Revisa siempre el cronograma oficial."
     ),
     "4": (
-        "🎓 Inscripción de trabajo de grado: solo por formularios publicados en las noticias de la Facultad de Ingeniería. "
+        " Inscripción de trabajo de grado: solo por formularios publicados en las noticias de la Facultad de Ingeniería. "
         "Revisa el banner PDF con pasos y requisitos."
     ),
     "5": (
-        "🗂️ RIUD (Repositorio): consulta las noticias del proyecto de Ingeniería Electrónica. "
+        " RIUD (Repositorio): consulta las noticias del proyecto de Ingeniería Electrónica. "
         "Allí están los formularios y la guía paso a paso para subir al repositorio."
     ),
     "6": (
-        "📄 Actas de sustentación: se solicitan por formulario (PDF). Completa y envía según las instrucciones del formato."
+        " Actas de sustentación: se solicitan por formulario (PDF). Completa y envía según las instrucciones del formato."
     ),
     "7": (
-        "📑 Constancias/certificados: consulta valores en ‘Derechos pecuniarios’, paga y luego escribe a "
+        " Constancias/certificados: consulta valores en ‘Derechos pecuniarios’, paga y luego escribe a "
         "secingelectronica@udistrital.edu.co con copia a ingelectronica@udistrital.edu.co, incluyendo tus datos y el tipo de documento."
     ),
     "8": (
@@ -131,6 +131,6 @@ def webhook():
     return "ok", 200
 
 if __name__ == "__main__":
-    # Puerto para Render/Heroku-style
+    # Puerto para Render
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port)
